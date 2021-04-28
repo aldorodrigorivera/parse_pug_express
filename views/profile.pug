@@ -1,0 +1,74 @@
+extends layout
+
+block content
+    secction.text-gray-600.body-font
+        center
+            br
+            h1.font-medium.title-font.text-gray-900.mb-1.text-xl BIENVENIDO
+            p #{user.username}
+            p #{user.objectId}
+    
+    section.text-gray-600.body-font
+        .container.px-5.py-24.mx-auto.flex.flex-wrap
+            .flex.relative.pt-10.pb-20.mx-auto(class='sm:items-center md:w-2/3')
+                .h-full.w-6.absolute.inset-0.flex.items-center.justify-center
+                    .h-full.w-1.bg-gray-200.pointer-events-none
+                .flex-shrink-0.w-6.h-6.rounded-full.mt-10.inline-flex.items-center.justify-center.bg-indigo-500.text-white.relative.z-10.title-font.font-medium.text-sm(class='sm:mt-0') 1
+                .flex-grow.pl-6.flex.items-start.flex-col(class='md:pl-8 sm:items-center sm:flex-row')
+                    .flex-shrink-0.w-24.h-24.bg-indigo-100.text-indigo-500.rounded-full.inline-flex.items-center.justify-center
+                        svg.w-12.h-12(fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24')
+                            path(d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z')
+                    .flex-grow.mt-6(class='sm:pl-6 sm:mt-0')
+                        h2.font-medium.title-font.text-gray-900.mb-1.text-xl Pagina inicial
+                        p.leading-relaxed 
+                            | Este es un ejemplo donde una aplicación de backend puede renderear vistas teniendo toda la fortaleza de ambos lados.
+                        center
+                            a(href="https://docs.parseplatform.org") Documentación general
+            .flex.relative.pb-20.mx-auto(class='sm:items-center md:w-2/3')
+                .h-full.w-6.absolute.inset-0.flex.items-center.justify-center
+                    .h-full.w-1.bg-gray-200.pointer-events-none
+                .flex-shrink-0.w-6.h-6.rounded-full.mt-10.inline-flex.items-center.justify-center.bg-indigo-500.text-white.relative.z-10.title-font.font-medium.text-sm(class='sm:mt-0') 2
+                .flex-grow.pl-6.flex.items-start.flex-col(class='md:pl-8 sm:items-center sm:flex-row')
+                    .flex-shrink-0.w-24.h-24.bg-indigo-100.text-indigo-500.rounded-full.inline-flex.items-center.justify-center
+                        svg.w-12.h-12(fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24')
+                            path(d='M22 12h-4l-3 9L9 3l-3 9H2')
+                    .flex-grow.mt-6(class='sm:pl-6 sm:mt-0')
+                        h2.font-medium.title-font.text-gray-900.mb-1.text-xl Inicio sesión
+                        p.leading-relaxed
+                            | Un inicio de sesión con todas las facilidades
+                        center
+                            a(href="https://docs.parseplatform.org/js/guide/#logging-in") Documentación login
+            .flex.relative.pb-20.mx-auto(class='sm:items-center md:w-2/3')
+                .h-full.w-6.absolute.inset-0.flex.items-center.justify-center
+                    .h-full.w-1.bg-gray-200.pointer-events-none
+                .flex-shrink-0.w-6.h-6.rounded-full.mt-10.inline-flex.items-center.justify-center.bg-indigo-500.text-white.relative.z-10.title-font.font-medium.text-sm(class='sm:mt-0') 3
+                .flex-grow.pl-6.flex.items-start.flex-col(class='md:pl-8 sm:items-center sm:flex-row')
+                    .flex-shrink-0.w-24.h-24.bg-indigo-100.text-indigo-500.rounded-full.inline-flex.items-center.justify-center
+                        svg.w-12.h-12(fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24')
+                            circle(cx='12' cy='5' r='3')
+                            path(d='M12 22V8M5 12H2a10 10 0 0020 0h-3')
+                    .flex-grow.mt-6(class='sm:pl-6 sm:mt-0')
+                        h2.font-medium.title-font.text-gray-900.mb-1.text-xl Registro ususarios
+                        p.leading-relaxed
+                            | Toda la validació de usuarios repetidos, o manejar un ID del usuario esta manejado automaticamente por el backend de parse.
+                        center
+                            a(href="https://docs.parseplatform.org/js/guide/#signing-up") Documentación singUp  
+            .flex.relative.pb-10.mx-auto(class='sm:items-center md:w-2/3')
+                .h-full.w-6.absolute.inset-0.flex.items-center.justify-center
+                    .h-full.w-1.bg-gray-200.pointer-events-none
+                .flex-shrink-0.w-6.h-6.rounded-full.mt-10.inline-flex.items-center.justify-center.bg-indigo-500.text-white.relative.z-10.title-font.font-medium.text-sm(class='sm:mt-0') 4
+                .flex-grow.pl-6.flex.items-start.flex-col(class='md:pl-8 sm:items-center sm:flex-row')
+                    .flex-shrink-0.w-24.h-24.bg-indigo-100.text-indigo-500.rounded-full.inline-flex.items-center.justify-center
+                        svg.w-12.h-12(fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24')
+                            path(d='M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2')
+                            circle(cx='12' cy='7' r='4')
+                    .flex-grow.mt-6(class='sm:pl-6 sm:mt-0')
+                        h2.font-medium.title-font.text-gray-900.mb-1.text-xl Perfil usuario
+                        p.leading-relaxed
+                            | Como las sesiones son del lado del backend se manejan como una variable global que es reconocida en todos lados del backend.
+                        center
+                            a(href="https://docs.parseplatform.org/js/guide/#queries") Documentación query
+    secction.text-gray-600.body-font
+        center
+            br
+            a(href="/login/logout")  Cerrar sesión

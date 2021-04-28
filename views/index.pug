@@ -1,0 +1,68 @@
+extends layout
+
+block content
+  section.text-gray-600.body-font
+    .container.px-5.py-24.mx-auto
+      .text-center.mb-20
+        h1.text-2xl.font-medium.text-center.title-font.text-gray-900.mb-4(class='sm:text-3xl') Parse Server
+        
+        p.text-base.leading-relaxed.mx-auto(class='xl:w-2/4 lg:w-3/4')
+          | Gestor de BD usado principalmente con mongoDB ademas de generar todo un backend con características muy agradables.
+      
+      
+      .flex.flex-wrap.-mx-2.neo(class='lg:w-4/5 sm:mx-auto sm:mb-2')
+        .p-2.w-full(class='sm:w-1/2')
+          .bg-gray-100.rounded.flex.p-4.h-full.items-center
+            svg.text-indigo-500.w-6.h-6.flex-shrink-0.mr-4(fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' viewBox='0 0 24 24')
+              path(d='M22 11.08V12a10 10 0 11-5.93-9.14')
+              path(d='M22 4L12 14.01l-3-3')
+            span.title-font.font-medium Base de datos en mongo
+
+        .p-2.w-full(class='sm:w-1/2')
+          .bg-gray-100.rounded.flex.p-4.h-full.items-center
+            svg.text-indigo-500.w-6.h-6.flex-shrink-0.mr-4(fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' viewBox='0 0 24 24')
+              path(d='M22 11.08V12a10 10 0 11-5.93-9.14')
+              path(d='M22 4L12 14.01l-3-3')
+            span.title-font.font-medium Facilidad de implementación
+
+        .p-2.w-full(class='sm:w-1/2')
+          .bg-gray-100.rounded.flex.p-4.h-full.items-center
+            svg.text-indigo-500.w-6.h-6.flex-shrink-0.mr-4(fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' viewBox='0 0 24 24')
+              path(d='M22 11.08V12a10 10 0 11-5.93-9.14')
+              path(d='M22 4L12 14.01l-3-3')
+            span.title-font.font-medium BD as a service
+
+        .p-2.w-full(class='sm:w-1/2')
+          .bg-gray-100.rounded.flex.p-4.h-full.items-center
+            svg.text-indigo-500.w-6.h-6.flex-shrink-0.mr-4(fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' viewBox='0 0 24 24')
+              path(d='M22 11.08V12a10 10 0 11-5.93-9.14')
+              path(d='M22 4L12 14.01l-3-3')
+            span.title-font.font-medium Notificaciones
+
+        .p-2.w-full(class='sm:w-1/2')
+          .bg-gray-100.rounded.flex.p-4.h-full.items-center
+            svg.text-indigo-500.w-6.h-6.flex-shrink-0.mr-4(fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' viewBox='0 0 24 24')
+              path(d='M22 11.08V12a10 10 0 11-5.93-9.14')
+              path(d='M22 4L12 14.01l-3-3')
+            span.title-font.font-medium Funciones Cloud
+
+        .p-2.w-full(class='sm:w-1/2')
+          .bg-gray-100.rounded.flex.p-4.h-full.items-center
+            svg.text-indigo-500.w-6.h-6.flex-shrink-0.mr-4(fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' viewBox='0 0 24 24')
+              path(d='M22 11.08V12a10 10 0 11-5.93-9.14')
+              path(d='M22 4L12 14.01l-3-3')
+            span.title-font.font-medium Implementacion para front y backend
+
+
+
+      button.flex.mx-auto.mt-16.text-white.bg-indigo-500.border-0.py-2.px-8.rounded.text-lg(class='focus:outline-none hover:bg-indigo-600' onClick='goToLogin()') Iniciar sesión
+      br
+      center 
+        a(href="https://parseplatform.org/") Documentación Oficial
+
+block addScripts
+  script.
+
+    function goToLogin(){
+      window.location.href="/login"
+    }

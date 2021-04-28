@@ -1,0 +1,64 @@
+extends layout
+
+block content
+    section.text-gray-600.body-font
+        .container.px-5.py-24.mx-auto.flex.flex-wrap.items-center
+            .pr-0(class='lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0')
+                h1.title-font.font-medium.text-3xl.text-gray-900 Funcionalidad de registro de usuarios
+                br
+                br
+                pre
+                    code
+                        |const user = new Parse.User()
+                        | user.set("username", "my name")
+                        | user.set("password", "my pass")
+                        | user.set("email", "email@example.com")
+                        | try {
+                        |     await user.signUp()
+                        | } catch (error) {
+                        |     res.send("Error: " + error.code + " " + error.message)
+                        | }
+                br
+                br
+                p.leading-relaxed.mt-4
+                    | El servicio se encarga de validar si ya hay un usuario con ese correo y lo valida, 
+            .bg-gray-100.rounded-lg.p-8.flex.flex-col.w-full.mt-10(class='lg:w-2/6 md:w-1/2 md:ml-auto md:mt-0')
+                h2.text-gray-900.text-lg.font-medium.title-font.mb-5 Registro
+                .relative.mb-4
+                    label.leading-7.text-sm.text-gray-600(for='full-name') Nombre
+                    input#name.w-full.bg-white.rounded.border.border-gray-300.text-base.outline-none.text-gray-700.py-1.px-3.leading-8.transition-colors.duration-200.ease-in-out(type='text' name='name' class='focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200')
+                
+                .relative.mb-4
+                    label.leading-7.text-sm.text-gray-600(for='full-name') Correo
+                    input#email.w-full.bg-white.rounded.border.border-gray-300.text-base.outline-none.text-gray-700.py-1.px-3.leading-8.transition-colors.duration-200.ease-in-out(type='email' name='email' class='focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200')
+                
+                .relative.mb-4
+                    label.leading-7.text-sm.text-gray-600(for='email') Contraseña
+                    input#password.w-full.bg-white.rounded.border.border-gray-300.text-base.outline-none.text-gray-700.py-1.px-3.leading-8.transition-colors.duration-200.ease-in-out(type='password' name='password' class='focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200')
+                button.text-white.bg-indigo-500.border-0.py-2.px-8.rounded.text-lg(class='focus:outline-none hover:bg-indigo-600' onClick="save()") Registrar
+                center
+                    br
+                    a.text-xs.text-gray-500.mt-3(href="/login") Ya tengo cuenta, quiero iniciar sesión.
+    secction.text-gray-600.body-font
+        center
+            br
+            a(href="/login/logout")  < Regresar
+
+block addScripts
+    script.
+        function save(){
+            const name = $('#name').val().trim();
+            const email = $('#email').val().trim();
+            const password = $('#password').val().trim();
+
+            if(name === '' || email ==='' || password ===''){
+                alert('Completa el formulario');
+                return;
+            }
+            axios.post('/singup', {name,email,password} ).then(response => {
+                window.location.href = '/profile'
+            }).catch(error => {
+                console.log(error);
+                alert('No se pudo regustrar el usuario')
+            })
+        }
